@@ -18,3 +18,4 @@ print("Instalando pacote...")
 argostranslate.package.install_from_path(package_to_install.download())
 
 print("✅ Idioma instalado!")
+

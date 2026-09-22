@@ -31,3 +31,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+#python -m tradutor.main "arquivo.pdf"
+#codigo para traduzir
