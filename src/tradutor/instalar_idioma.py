@@ -1,5 +1,4 @@
 import argostranslate.package
-import argostranslate.translate
 
 print("Baixando lista de idiomas...")
 argostranslate.package.update_package_index()

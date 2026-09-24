@@ -22,7 +22,7 @@ def traduzir_pdf_layout(input_path, output_path):
         # 🔹 pega blocos de texto
         blocks = page.get_text("blocks")
 
-        # 🔥 se não tiver texto → usa OCR
+        #se não tiver texto → usa OCR
         if not blocks:
             print(f"⚠️ OCR na página {i+1}")
             texto = extrair_texto_ocr(page)
@@ -36,7 +36,7 @@ def traduzir_pdf_layout(input_path, output_path):
             )
 
         else:
-            # 🔹 traduz bloco por bloco
+            #traduz bloco por bloco
             for b in blocks:
                 x0, y0, x1, y1, text, *_ = b
 

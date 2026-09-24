@@ -29,7 +29,7 @@ def traduzir_epub(input_path, output_path):
             if not texto:
                 continue
 
-            # 🔄 progresso limpo (não polui o terminal)
+            # progresso limpo
             print(f"   🔄 {j+1}/{total_tags} parágrafos", end="\r")
 
             traduzido = translate_text(texto, translator)
@@ -39,7 +39,7 @@ def traduzir_epub(input_path, output_path):
 
         item.set_content(str(soup))
 
-        # linha nova depois do capítulo
+        #linha nova depois do capítulo
         print(f"   ✅ {total_tags} parágrafos processados")
 
     epub.write_epub(output_path, book)
