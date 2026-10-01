@@ -1,7 +1,9 @@
 import sys
 from tkinter import filedialog
-from tradutor.pdf_layout import traduzir_pdf_layout
-from tradutor.tradutor_epub import traduzir_epub
+
+from translator.pdf_layout import translate_pdf_layout
+from translator.translator.epub import translate_epub
+
 
 def main():
     if len(sys.argv) > 1:
@@ -21,10 +23,10 @@ def main():
         return
 
     if arquivo.endswith(".pdf"):
-        traduzir_pdf_layout(arquivo, "traduzido.pdf")
+        translate_pdf_layout(arquivo, "traduzido.pdf")
 
     elif arquivo.endswith(".epub"):
-        traduzir_epub(arquivo, "traduzido.epub")
+        translate_epub(arquivo, "traduzido.epub")
 
     else:
         print("Formato não suportado")

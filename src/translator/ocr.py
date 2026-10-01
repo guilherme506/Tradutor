@@ -1,8 +1,8 @@
+import io
+
 import fitz
 import pytesseract
 from PIL import Image
-import io
-
 
 
 def extrair_texto_ocr(page):

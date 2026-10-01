@@ -31,9 +31,9 @@ O projeto pode ser utilizado quando você precisa:
 O repositório está organizado em módulos Python dentro da pasta `src/tradutor`, incluindo:
 
 - `main.py`: ponto de entrada da aplicação;
-- `tradutor_pdf.py`: lógica de tradução para arquivos PDF;
-- `tradutor_epub.py`: lógica de tradução para arquivos EPUB;
-- `pdf_layout.py`: extração de texto e organização do layout das páginas;
+- `pdf.py`: lógica de tradução para arquivos PDF;
+- `epub.py`: lógica de tradução para arquivos EPUB;
+- `layout.py`: extração de texto e organização do layout das páginas;
 - `ocr.py`: reconhecimento óptico de caracteres para páginas sem texto extraível;
 - `argos.py`: integração com Argos Translate para tradução dos textos.
 
@@ -114,15 +114,17 @@ O programa gera arquivos de saída com os nomes:
 ```text
 Tradutor/
 ├── src/
-│   └── tradutor/
+│   └── translator/
 │       ├── __init__.py
 │       ├── argos.py
 │       ├── instalar_idioma.py
+│       ├── interface.py
 │       ├── main.py
 │       ├── ocr.py
 │       ├── pdf_layout.py
-│       ├── tradutor_epub.py
-│       └── tradutor_pdf.py
+│       └── translator
+│           ├── epub.py
+│           └── pdf.py
 ├── .gitignore
 ├── .python-version
 ├── LICENSE
@@ -145,7 +147,7 @@ Este projeto pode ser aprimorado em diversas áreas, como:
 
 ## Licença
 
-Este projeto está licenciado sob a licença MIT. Consulte o arquivo `LICENSE` para mais detalhes.
+Este projeto está licenciado sob a licença GPL-3.0. Consulte o arquivo `LICENSE` para mais detalhes.
 
 ## Conclusão
 

@@ -1,9 +1,10 @@
-from ebooklib import epub, ITEM_DOCUMENT
 from bs4 import BeautifulSoup
-from tradutor.argos import get_translation, translate_text
+from ebooklib import ITEM_DOCUMENT, epub
+
+from translator.argos import get_translation, translate_text
 
 
-def traduzir_epub(input_path, output_path):
+def translate_epub(input_path, output_path):
     print(f"📘 Traduzindo EPUB: {input_path}")
 
     book = epub.read_epub(input_path)
@@ -32,8 +33,8 @@ def traduzir_epub(input_path, output_path):
 
             try:
                 traduzido = translate_text(texto, translator)
-            except Exception as e:
-                print(f"\n⚠️ Erro: {e}")
+            except Exception as e:  # noqa: BLE001
+                print(f"\n Erro: {e}")
                 continue
 
             node.replace_with(traduzido)
@@ -41,7 +42,7 @@ def traduzir_epub(input_path, output_path):
 
         item.set_content(str(soup))
 
-        print(f"   ✅ Capítulo concluído")
+        print("   ✅ Capítulo concluído")
 
     epub.write_epub(output_path, book)
 

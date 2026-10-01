@@ -1,9 +1,10 @@
 import fitz
-from tradutor.argos import get_translation, translate_text
-from tradutor.ocr import extrair_texto_ocr
+
+from translator.argos import get_translation, translate_text
+from translator.ocr import extrair_texto_ocr
 
 
-def traduzir_pdf_layout(input_path, output_path):
+def translate_pdf_layout(input_path, output_path):
     print(f"Traduzindo: {input_path}")
 
     doc = fitz.open(input_path)
